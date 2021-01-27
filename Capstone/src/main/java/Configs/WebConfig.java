@@ -3,6 +3,8 @@ package Configs;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
+import Security.Bcrypt;
+
 @Configuration
 public class WebConfig {
 	

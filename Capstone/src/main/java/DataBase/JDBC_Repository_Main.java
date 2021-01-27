@@ -11,5 +11,21 @@ public class JDBC_Repository_Main {
 	@Autowired
 	private JdbcTemplate jdbcTemplate;
 	
+	public String select(String Table_Name , 	String Target_Field , String condition) {
+		
+		String sql = "Select " + Target_Field + " from "
+					+ Table_Name + " where " + condition;
+	
+		String res = jdbcTemplate.queryForObject(sql, String.class);
+		return res;
+	}
+	
+	public void Insert_Login_Track(String ID , String Time) {
+		
+		String sql = "Insert into Login_Track values ('"
+				+ ID + "' , '" + Time + "')";
+		jdbcTemplate.execute(sql);
+		
+	}
 	
 }
