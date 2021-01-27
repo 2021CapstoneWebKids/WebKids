@@ -8,14 +8,14 @@
   <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <link rel="stylesheet" href="Index_Asset/css/login.css">
-  <title>광성 로그인</title>
+  <title>WebKids 로그인</title>
   
 </head>
 
 <body>
   <div class="main">
   
-    <p class="sign" align="center">로 그 인</p>
+    <p class="sign" align="center">WebKids Login</p>
     <p align="center">${fail_message}</p>
     <form class="form1" method="post" action="login.do">
       <input class="un "  name="ID" id="ID" type="text" placeholder="ID"/>
