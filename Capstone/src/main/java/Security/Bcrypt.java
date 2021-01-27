@@ -1,4 +1,4 @@
-package Configs;
+package Security;
 
 import org.mindrot.jbcrypt.BCrypt;
 
