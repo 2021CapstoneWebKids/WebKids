@@ -7,7 +7,7 @@ import org.springframework.stereotype.Repository;
 @Repository
 public class JDBC_Repository_Main {
 
-	// Spring -> JDBC -> MySql 쿼리 처리 클래스
+	// Spring -> JDBC -> MySql 쿼리 처리 클래스 (범용적 기능들 관련)
 	@Autowired
 	private JdbcTemplate jdbcTemplate;
 	

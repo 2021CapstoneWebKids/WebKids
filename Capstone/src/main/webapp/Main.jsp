@@ -35,6 +35,20 @@
 	</head>
 	<body class="is-preload" onload="showClock()">
 
+		<%
+ 		String strReferer = request.getHeader("referer");
+ 	
+ 		if(strReferer == null){
+		%>
+ 		<script language="javascript">
+  		alert("URL 주소창에 주소를 직접 입력해서 접근하셨습니다.\n\n정상적인 경로를 통해 다시 접근해 주십시오.");
+  		document.location.href="./Main_Login.jsp";
+ 		</script>
+		<%
+ 		 return;
+ 		}
+		%>
+		
 		<!-- Wrapper -->
 			<div id="wrapper">
 
@@ -53,8 +67,8 @@
 						</div>
 						<nav>
 							<ul>
-								<li><a href="#intro">인트로</a></li>
-								<li><a href="KwangSung_Main">메뉴1</a></li>
+								<li><a href="Attendance">출근부</a></li>
+								<li><a href="contact">메뉴1</a></li>
 								<li><a href="#about">메뉴2</a></li>
 								<li><a href="#contact">메뉴3</a></li>
 								<li><a href="#contact">메뉴4</a></li>
