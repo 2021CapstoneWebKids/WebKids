@@ -7,6 +7,8 @@ import java.io.IOException;
 import java.io.InputStream;
 
 import javax.imageio.ImageIO;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -34,9 +36,12 @@ public class Main_Controller {
 		return mav;
 	}
 	
-	@RequestMapping(value = "Attendance")
-	public ModelAndView Attendance() {
+	@RequestMapping(value = "/Attendance")
+	public ModelAndView Attendance(HttpServletRequest req) {
 		ModelAndView mav = new ModelAndView("Attendance.jsp");
+		HttpSession session = req.getSession();
+		String Session_User = (String) session.getAttribute("ID");
+		mav.addObject("Session_User", Session_User);
 		return mav;
 	}
 	
