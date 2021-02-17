@@ -69,8 +69,8 @@ public class QR_Create {
 			
 		    BufferedImage qrimage = MatrixToImageWriter.toBufferedImage(bitMatrix, config);
 		        
-		    ImageIO.write(qrimage, "jpg", new File("C:\\Users\\user\\Desktop\\QRCODE.jpg"));
-		    File qrimg = new File("C:\\Users\\user\\Desktop\\QRCODE.jpg");
+		    ImageIO.write(qrimage, "jpg", new File("C:\\Users\\user\\git\\-\\Capstone\\src\\main\\webapp\\QR_Image\\QRCODE.jpg"));
+		    File qrimg = new File("C:\\Users\\user\\git\\-\\Capstone\\src\\main\\webapp\\QR_Image\\QRCODE.jpg");
 
 		    db_rep.Insert_Randomize_QR(qrimg , param);
 			System.out.println("랜덤 QR코드 갱신됨 , Rnd_String : " + param  + "\n");
