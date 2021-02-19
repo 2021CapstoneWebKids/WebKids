@@ -62,7 +62,6 @@ public class Main_Controller {
 	        BufferedImage image = new BufferedImage(10, 10, BufferedImage.TYPE_BYTE_BINARY);
 	        BufferedImage qrimage = MatrixToImageWriter.toBufferedImage(matrix, config);
 	        
-	        
 			ImageIO.write(qrimage, "jpg", new File("C:\\Users\\user\\Desktop\\2021캡스톤\\QRCODE.jpg"));
 			System.out.println("QR코드생성완료\n");
 		} catch (Exception e) {
