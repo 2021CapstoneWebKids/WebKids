@@ -43,10 +43,10 @@
       function drawChart() {
         var data = google.visualization.arrayToDataTable([
           ['날짜', '매출액(%)'],
-          ['0215',  50],
-          ['0216',  60],
-          ['0217',  30],
-          ['0218',  40]
+          ['${day_data1}',  ${sales_data1}],
+          ['${day_data2}',  ${sales_data2}],
+          ['${day_data3}',  ${sales_data3}],
+          ['${day_data4}',  ${sales_data4}]
         ]);
 
         var options = {
@@ -145,6 +145,6 @@
     <td class="day"><span class="number">11</span></td>
   </tr>
 </table>
-	<div id="curve_chart" style="width: 1600px; height: 500px"></div>
+	<div id="curve_chart" style="width: 1730px; height: 500px"></div>
 </body>
 </html>
