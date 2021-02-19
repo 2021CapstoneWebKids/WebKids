@@ -145,6 +145,6 @@
     <td class="day"><span class="number">11</span></td>
   </tr>
 </table>
-	<div id="curve_chart" style="width: 1730px; height: 500px"></div>
+	<div id="curve_chart" style="width: 1700px; height: 500px"></div>
 </body>
 </html>
