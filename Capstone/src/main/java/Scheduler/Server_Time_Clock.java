@@ -14,7 +14,7 @@ public class Server_Time_Clock {
 	@Autowired
 	private JDBC_Repository_Server db_rep;
 	
-	@Scheduled(cron = "0 20 0 * * *")
+	@Scheduled(cron = "0 0 0 * * *")
 	public void autoUpdate() {
 		//매일 00:00:00에 호출
 		db_rep.update_server_clock();
