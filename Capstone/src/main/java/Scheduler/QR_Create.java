@@ -55,7 +55,7 @@ public class QR_Create {
 	 *  // Component로 설정해놨기에 , 배포와 동시에 fixedDelay 시작됨.
 	 */
 	
-	@Scheduled(fixedDelay = 15000)
+	@Scheduled(fixedDelay = 30000)
 	public void Randomize_QR() throws WriterException , IOException{
 		
 		try {

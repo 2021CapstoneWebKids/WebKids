@@ -42,14 +42,6 @@ public class Main_Controller {
 		HttpSession session = req.getSession();
 		String Session_User = (String) session.getAttribute("ID");
 		mav.addObject("Session_User", Session_User);
-		mav.addObject("day_data1" , "0201");
-		mav.addObject("day_data2" , "0202");
-		mav.addObject("day_data3" , "0203");
-		mav.addObject("day_data4" , "0204");
-		mav.addObject("sales_data1" , "50");
-		mav.addObject("sales_data2" , "30");
-		mav.addObject("sales_data3" , "10");
-		mav.addObject("sales_data4" , "70");
 		return mav;
 	}
 	
