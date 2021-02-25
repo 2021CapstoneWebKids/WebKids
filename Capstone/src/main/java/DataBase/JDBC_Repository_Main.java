@@ -28,4 +28,12 @@ public class JDBC_Repository_Main {
 		
 	}
 	
+	public void Insert_Online_User(String ID , String Time) {
+		
+		String sql = "Insert into online_user values ('"
+				+ ID + "' , '" + Time + "')";
+		jdbcTemplate.execute(sql);
+		
+	}
+	
 }

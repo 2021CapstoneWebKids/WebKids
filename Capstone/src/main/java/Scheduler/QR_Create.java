@@ -62,7 +62,7 @@ public class QR_Create {
 			Random rnd = new Random();
 			String param = String.valueOf((char) ((int) (rnd.nextInt(26)) + 97));
 			// QR코드 랜덤 String 변수 (a~z)
-			
+			// 고정 주기 반복 스케줄러
 			QRCodeWriter qrCodeWriter = new QRCodeWriter();
 			BitMatrix bitMatrix = qrCodeWriter.encode(param, BarcodeFormat.QR_CODE, 500, 500);
 			MatrixToImageConfig config = new MatrixToImageConfig(qrColor, 0xFFFFFFFF);

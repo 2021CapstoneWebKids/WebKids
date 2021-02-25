@@ -16,8 +16,12 @@ public class Server_Time_Clock {
 	
 	@Scheduled(cron = "0 0 0 * * *")
 	public void autoUpdate() {
-		//매일 00:00:00에 호출
+		//매일 00:00:00에 호출 , 고정 시각 스케줄러
 		db_rep.update_server_clock();
 		System.out.println("서버 시간이 업데이트 되었습니다.\n");
 	}
+	
+	
+	
+	
 }
