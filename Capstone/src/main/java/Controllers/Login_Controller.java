@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 import DataBase.JDBC_Repository_Main;
+import Scheduler.Online_Users;
 import Security.Bcrypt;
 
 @Controller
@@ -26,6 +27,9 @@ public class Login_Controller {
 	
 	@Autowired
 	private JDBC_Repository_Main jdbc;
+	
+	@Autowired
+	Online_Users ou;
 	
 	@RequestMapping(value = "/login")
 	public ModelAndView Main_Login(HttpServletRequest req , HttpServletResponse httpServletResponse) throws IOException {
@@ -47,6 +51,7 @@ public class Login_Controller {
 		session.setAttribute("ID" , ID);
 		String Session_User = (String) session.getAttribute("ID");
 		
+		
 		if(Bcry.isMatch(Password, sql_hashed_pwd)){
 			SimpleDateFormat format1 = new SimpleDateFormat ( "yyyy-MM-dd HH:mm:ss");
 			Date time = new Date();
@@ -54,12 +59,16 @@ public class Login_Controller {
 			System.out.println("\n" + "[SYSTEM] 아이디 : " + ID + "님이 " + time_pr + " 에 로그인 하였습니다.");
 			
 			jdbc.Insert_Login_Track(ID, time_pr);
+			jdbc.Insert_Online_User(Session_User, time_pr);
+			ou.startScheduler(Session_User);
 			mav2.addObject("Session_User", Session_User);
+			
 			return mav2;
 			
 		}
 		else {
 			mav.addObject("fail_message", "ID/PW가 틀렸습니다");
+			session.invalidate();
 			return mav;
 		}
 	}
