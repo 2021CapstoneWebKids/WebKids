@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
+import Configs.SessionListener;
 import DataBase.JDBC_Repository_Main;
 import Scheduler.Online_Users;
 import Security.Bcrypt;
@@ -22,6 +23,10 @@ import Security.Bcrypt;
 @Controller
 public class Login_Controller {
 
+	
+	SessionListener sl = new SessionListener();
+	
+	
 	@Autowired
 	Bcrypt Bcry;
 	
@@ -50,6 +55,8 @@ public class Login_Controller {
 		HttpSession session = req.getSession();
 		session.setAttribute("ID" , ID);
 		String Session_User = (String) session.getAttribute("ID");
+		sl.sessionCreated(req);
+		jdbc.Insert_Online_User(ID);
 		
 		
 		if(Bcry.isMatch(Password, sql_hashed_pwd)){
@@ -58,9 +65,9 @@ public class Login_Controller {
 			String time_pr = format1.format(time);
 			System.out.println("\n" + "[SYSTEM] 아이디 : " + ID + "님이 " + time_pr + " 에 로그인 하였습니다.");
 			
+			
 			jdbc.Insert_Login_Track(ID, time_pr);
-			jdbc.Insert_Online_User(Session_User, time_pr);
-			ou.startScheduler(Session_User);
+			//ou.startScheduler(Session_User);
 			mav2.addObject("Session_User", Session_User);
 			
 			return mav2;

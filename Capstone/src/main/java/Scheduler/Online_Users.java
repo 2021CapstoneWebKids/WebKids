@@ -29,7 +29,7 @@ public class Online_Users {
 	private Runnable getRunnable() {
 		return () -> {
 			// 동적스케줄러 기능
-			System.out.println(new Date() + user_name + "님 접속중 확인 완료");
+			System.out.println(new Date() + ",  " + user_name + "님 접속중 확인 완료");
 		};
 	}
 	
