@@ -52,19 +52,18 @@ public class Login_Controller {
 		String sql_hashed_pwd = jdbc.select("member", "Password", 
 				"ID = '" + ID + "'");
 		
-		HttpSession session = req.getSession();
-		session.setAttribute("ID" , ID);
-		String Session_User = (String) session.getAttribute("ID");
-		sl.sessionCreated(req);
-		jdbc.Insert_Online_User(ID);
-		
-		
 		if(Bcry.isMatch(Password, sql_hashed_pwd)){
 			SimpleDateFormat format1 = new SimpleDateFormat ( "yyyy-MM-dd HH:mm:ss");
 			Date time = new Date();
 			String time_pr = format1.format(time);
 			System.out.println("\n" + "[SYSTEM] 아이디 : " + ID + "님이 " + time_pr + " 에 로그인 하였습니다.");
 			
+			HttpSession session = req.getSession();
+			session.setAttribute("ID" , ID);
+			String Session_User = (String) session.getAttribute("ID");
+			session.setMaxInactiveInterval(1*60);
+			
+			jdbc.Insert_Online_User(ID);
 			
 			jdbc.Insert_Login_Track(ID, time_pr);
 			//ou.startScheduler(Session_User);
@@ -75,7 +74,6 @@ public class Login_Controller {
 		}
 		else {
 			mav.addObject("fail_message", "ID/PW가 틀렸습니다");
-			session.invalidate();
 			return mav;
 		}
 	}
