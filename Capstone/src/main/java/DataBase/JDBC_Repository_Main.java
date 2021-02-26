@@ -28,10 +28,17 @@ public class JDBC_Repository_Main {
 		
 	}
 	
-	public void Insert_Online_User(String ID , String Time) {
+	public void Insert_Online_User(String ID) {
 		
 		String sql = "Insert into online_user values ('"
-				+ ID + "' , '" + Time + "')";
+				+ ID + "')";
+		jdbcTemplate.execute(sql);
+		
+	}
+	
+	public void Delete_Online_User(String ID) {
+		
+		String sql = "Delete from online_user where User = '" + ID +"'";
 		jdbcTemplate.execute(sql);
 		
 	}
