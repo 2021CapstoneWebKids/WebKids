@@ -24,6 +24,8 @@ public class Online_Users {
 		this.user_name = user_name;
 		// 동적 스케줄러 시작 부분
 		scheduler.schedule(getRunnable() , getTrigger());
+		
+		// scheduler.destroy();
 	}
 	
 	private Runnable getRunnable() {
