@@ -30,13 +30,13 @@ public class Main_Controller {
 	@Autowired
 	private JDBC_Repository_Main jdbc;
 	
-	@RequestMapping(value = {"/index" , "/Main"})
-	public ModelAndView index() {
+	@RequestMapping(value = {"/Main" , "/main"})
+	public ModelAndView Main() {
 		ModelAndView mav = new ModelAndView("Main.jsp");
 		return mav;
 	}
 	
-	@RequestMapping(value = "/Attendance")
+	@RequestMapping(value = "/main/Attendance")
 	public ModelAndView Attendance(HttpServletRequest req) {
 		ModelAndView mav = new ModelAndView("Attendance.jsp");
 		HttpSession session = req.getSession();
