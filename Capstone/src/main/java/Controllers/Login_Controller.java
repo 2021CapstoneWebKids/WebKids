@@ -36,7 +36,7 @@ public class Login_Controller {
 	@Autowired
 	Online_Users ou;
 	
-	@RequestMapping(value = "/login")
+	@RequestMapping(value = {"/login" , "/index"})
 	public ModelAndView Main_Login(HttpServletRequest req , HttpServletResponse httpServletResponse) throws IOException {
 		ModelAndView mav = new ModelAndView("Main_Login.jsp");
 		return mav;
