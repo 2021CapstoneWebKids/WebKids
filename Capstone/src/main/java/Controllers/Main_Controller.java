@@ -36,7 +36,7 @@ public class Main_Controller {
 		return mav;
 	}
 	
-	@RequestMapping(value = "/main/Attendance")
+	@RequestMapping(value = "attendance")
 	public ModelAndView Attendance(HttpServletRequest req) {
 		ModelAndView mav = new ModelAndView("Attendance.jsp");
 		HttpSession session = req.getSession();
