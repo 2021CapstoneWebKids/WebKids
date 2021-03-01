@@ -67,8 +67,8 @@
 						</div>
 						<nav>
 							<ul>
-								<li><a href="Attendance">출근부</a></li>
-								<li><a href="contact">메뉴1</a></li>
+								<li><a href="attendance">출근부</a></li>
+								<li><a href="chat">채팅방</a></li>
 								<li><a href="#about">메뉴2</a></li>
 								<li><a href="#contact">메뉴3</a></li>
 								<li><a href="#contact">메뉴4</a></li>

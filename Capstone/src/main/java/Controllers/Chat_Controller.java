@@ -26,7 +26,7 @@ public class Chat_Controller {
 		messages = new ArrayList<>();
 	}
 	
-	@RequestMapping(value="/main/chat")
+	@RequestMapping(value="chat")
 	public ModelAndView chatMain(HttpServletRequest req) {
 		
 		ModelAndView mav = new ModelAndView("chat.jsp");
