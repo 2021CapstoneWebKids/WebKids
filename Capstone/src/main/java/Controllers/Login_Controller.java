@@ -26,7 +26,6 @@ public class Login_Controller {
 	
 	SessionListener sl = new SessionListener();
 	
-	
 	@Autowired
 	Bcrypt Bcry;
 	
